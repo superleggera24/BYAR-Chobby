@@ -2460,9 +2460,6 @@ local function SetupVotePanel(votePanel, battle, battleID)
 		return matchmakerModeEnabled
 	end
 
-	function externalFunctions.visible()
-		return activePanel.visible
-	end
 
 	return externalFunctions
 end
@@ -3342,9 +3339,6 @@ local function InitializeControls(battleID, oldLobby, topPoportion, setupData)
 
 	local function OnBattleIngameUpdate(listener, updatedBattleID, isRunning)
 		infoHandler.BattleIngameUpdate(updatedBattleID, isRunning)
-		if votePanel.visible and isRunning and battleID == updatedBattleID then
-			votePanel.VoteEnd("Match starting", true)
-		end
 	end
 
 	local function OnUpdateBattleInfo(listener, updatedBattleID, newInfo)
