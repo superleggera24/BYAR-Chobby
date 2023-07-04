@@ -1715,11 +1715,7 @@ function Lobby:GetBattlePlayerCount(battleID)
 				Spring.Echo(s)
 			end
 		]]--
-		if playerCount > battle.maxPlayers then
-			return math.max(0, battle.maxPlayers)
-		else 
-			return math.max(0, playerCount)
-		end
+		return math.max(0, playerCount)
 	end
 end
 
